@@ -41,6 +41,8 @@ function Login() {
         .then(res =>{
             sweetAlert(<h2>Has ingresado correctamente</h2>)
             console.log(res.data);
+            const resToken = res.data.token;
+            localStorage.setItem("token", resToken)
         } )
     }
 
