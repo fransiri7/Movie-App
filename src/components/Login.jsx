@@ -1,4 +1,5 @@
 import axios from "axios";
+import sweetAlert from '@sweetalert/with-react'
 
 function Login() {
 
@@ -11,20 +12,34 @@ function Login() {
         const regExpresionEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         
         if (email === "" || password === ""){
-            console.log ("Todos los campos deben ser obligatorios")
+            sweetAlert(
+                <div>
+                    <h2>Todos los campos deben ser obligatorios</h2>
+                    <p>Por favor completar todos los campos para poder continuar</p>
+                </div>
+            )
             return;
         }
         if (email !== "" && !regExpresionEmail.test(email)){
-            console.log ("Debes ingresar un email valido")
+            sweetAlert(
+                <div>
+                    <h2>Debes ingresar un email valido</h2>
+                </div>
+            )
             return;
         }
         if (email !== "challenge@alkemy.org" && password !== "react"){
-            console.log ("El mail o la contraseña no son correctos")
+            sweetAlert(
+                <div>
+                    <h2>El mail o la contraseña no son correctos</h2>
+                    <p>Por favor verifica que tanto el mail como la contraseña hayan sido ingresados correctamente</p>
+                </div>
+            )
         }
 
-        console.log("Ok, estamos listos para enviar la informacion")
         axios.post("http://challenge-react.alkemy.org/", {email, password})
         .then(res =>{
+            sweetAlert(<h2>Has ingresado correctamente</h2>)
             console.log(res.data);
         } )
     }
