@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function Login() {
 
     const handleSubmit = (e) =>{
@@ -16,11 +18,15 @@ function Login() {
             console.log ("Debes ingresar un email valido")
             return;
         }
-        if (email !== "fransiri@gmail.com" && password !== "1234"){
+        if (email !== "challenge@alkemy.org" && password !== "react"){
             console.log ("El mail o la contraseña no son correctos")
         }
 
         console.log("Ok, estamos listos para enviar la informacion")
+        axios.post("http://challenge-react.alkemy.org/", {email, password})
+        .then(res =>{
+            console.log(res.data);
+        } )
     }
 
     return (
