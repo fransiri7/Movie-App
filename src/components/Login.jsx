@@ -1,7 +1,10 @@
 import axios from "axios";
 import sweetAlert from '@sweetalert/with-react'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -9,7 +12,7 @@ function Login() {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        const regExpresionEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        const regExpresionEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
         
         if (email === "" || password === ""){
             sweetAlert(
@@ -43,6 +46,7 @@ function Login() {
             console.log(res.data);
             const resToken = res.data.token;
             localStorage.setItem("token", resToken)
+            navigate("/listado")
         } )
     }
 
