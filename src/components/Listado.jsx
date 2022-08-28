@@ -1,17 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate} from "react-router-dom";
 import { useEffect } from "react";
 
 function Listado() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (token === null) {
-            navigate("/");
-        }
-    }, [navigate]);
+    // useEffect(() => {
+    //     const token = localStorage.getItem("token");
+    //     if (token === null) {
+    //         navigate("/");
+    //     }
+    // }, [navigate]);
 
+    //token si no estas logueado es NULL
+    let token = localStorage.getItem("token")
     return (
+        <>
+        { !token && <Navigate to="/"/>}
         <div className="row">
             <div className="col-3">
                 <div className="card">
@@ -31,6 +35,7 @@ function Listado() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 

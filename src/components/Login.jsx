@@ -1,6 +1,6 @@
 import axios from "axios";
 import sweetAlert from '@sweetalert/with-react'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Login() {
 
@@ -50,7 +50,11 @@ function Login() {
         } )
     }
 
+    let token = localStorage.getItem("token")
+
     return (
+        <>
+        {token && <Navigate to="listado"/>}
         <div>
             <h2>Formulario de Login</h2>
             <form onSubmit={handleSubmit}>
@@ -65,6 +69,7 @@ function Login() {
                 <button type="submit">Ingresar</button>
             </form>
         </div>
+        </>
     );
 }
 
