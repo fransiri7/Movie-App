@@ -10,14 +10,16 @@ import "./css/bootstrap.min.css";
 
 function App() {
     return (
-       <div className="container">
+       <>
         <Header/>
+        <div className="container mt-3">
        <Routes>
             <Route exact path="/" element={<Login />} />
             <Route path="/listado" element={<Listado />} />
         </Routes>
+        </div>
         <Footer/>
-      </div>
+      </>
     );
 }
 
