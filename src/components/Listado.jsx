@@ -17,7 +17,7 @@ function Listado() {
     console.log(moviesList);
 
     //token si no estas logueado es NULL
-    let token = localStorage.getItem("token");
+    let token = sessionStorage.getItem("token");
     return (
         <>
             {!token && <Navigate to="/" />}

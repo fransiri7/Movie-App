@@ -45,12 +45,12 @@ function Login() {
             sweetAlert(<h2>Has ingresado correctamente</h2>)
             console.log(res.data);
             const resToken = res.data.token;
-            localStorage.setItem("token", resToken)
+            sessionStorage.setItem("token", resToken)
             navigate("/listado")
         } )
     }
 
-    let token = localStorage.getItem("token")
+    let token = sessionStorage.getItem("token")
 
     return (
         <>
