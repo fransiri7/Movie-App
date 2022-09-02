@@ -8,8 +8,12 @@ function Detalle (){
     let movieID = query.get("movieID");
 
     useEffect(()=>{
-        console.log(movieID)
-    }, [movieID])
+        const responseDetail = `https://api.themoviedb.org/3/movie/${movieID}?api_key=379f6ca71eb017bd6e9f97929ced1fde&language=es-ES`
+        axios.get(responseDetail)
+        .then((response)=>{
+            const dataDetail = response.data
+        })
+    }, [])
 
     return (
         <>
