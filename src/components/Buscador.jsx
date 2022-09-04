@@ -1,13 +1,18 @@
 import sweetAlert from "@sweetalert/with-react";
+import { useNavigate } from "react-router-dom";
 
 function Buscador() {
+    const navigate = useNavigate();
     const handleSubmit = e =>{
         e.preventDefault();
         const keyword = e.currentTarget.keyword.value.trim();
         if (keyword.length === 0){
-            sweetAlert(<h2>Debes ingresar el nombre de una pelicula</h2>)
+            sweetAlert(<h5>Debes ingresar el nombre de una pelicula</h5>)
         } else if (keyword.length < 4){
-            sweetAlert(<h2>Debes ingresar 3 caracteres o mas</h2>)
+            sweetAlert(<h5>Debes ingresar 3 caracteres o mas</h5>)
+        } else {
+            e.currentTarget.keyword.value = "";
+            navigate(`/resultados?pelicula=${keyword}`)
         }
     }
 

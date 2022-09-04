@@ -39,10 +39,8 @@ function Header() {
                             </li>
                             
                         </ul>
-                        <form className="d-flex" role="search">
                             <Buscador/>
-                        </form>
-                    </div>
+                        </div>
                 </div>
             </nav>
         </>

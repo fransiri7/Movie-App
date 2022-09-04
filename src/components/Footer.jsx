@@ -5,60 +5,60 @@ function Footer() {
         <>
             <footer className="text-center text-white" style={{"background-color": "#f1f1f1;"}}>
                 {/* <!-- Grid container --> */}
-                <div className="container pt-4">
+                {/* <div className="container pt-4"> */}
                     {/* <!-- Section: Social media --> */}
-                    <section className="mb-4">
+                    {/* <section className="mb-4"> */}
                         {/* <!-- Facebook --> */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="/"
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
                             <i className="fab fa-facebook-f"></i>
-                        </Link>
+                        </Link> */}
 
                         {/* <!-- Twitter --> */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="/"
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
                             <i className="fab fa-twitter"></i>
-                        </Link>
+                        </Link> */}
 
                         {/* Google */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="https://www.google.com.ar/"
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
                             <i className="fab fa-google"></i>
-                        </Link>
+                        </Link> */}
 
                         {/* <!-- Instagram --> */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="/"
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
                             <i className="fab fa-instagram"></i>
-                        </Link>
+                        </Link> */}
 
                         {/* <!-- Linkedin --> */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="/"
                             role="button"
                             data-mdb-ripple-color="dark"
                         >
                             <i className="fab fa-linkedin"></i>
-                        </Link>
+                        </Link> */}
                         {/* <!-- Github --> */}
-                        <Link
+                        {/* <Link
                             className="btn btn-link btn-floating btn-lg text-dark m-1"
                             to="/"
                             role="button"
@@ -66,9 +66,9 @@ function Footer() {
                         >
                             <i className="fab fa-github"></i>
                         </Link>
-                    </section>
+                    </section> */}
                     {/* <!-- Section: Social media --> */}
-                </div>
+                {/* </div> */}
                 {/* <!-- Grid container --> */}
 
                 {/* <!-- Copyright --> */}
