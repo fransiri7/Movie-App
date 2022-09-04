@@ -3,9 +3,11 @@ import sweetAlert from "@sweetalert/with-react";
 function Buscador() {
     const handleSubmit = e =>{
         e.preventDefault();
-        const keyword = e.currentTarget.keyword.value;
+        const keyword = e.currentTarget.keyword.value.trim();
         if (keyword.length === 0){
             sweetAlert(<h2>Debes ingresar el nombre de una pelicula</h2>)
+        } else if (keyword.length < 4){
+            sweetAlert(<h2>Debes ingresar 3 caracteres o mas</h2>)
         }
     }
 
