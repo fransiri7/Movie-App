@@ -1,13 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import sweetAlert from "@sweetalert/with-react";
 
+
 function Resultados() {
-    let query = new URLSearchParams(window.location.search);
-    let keyword = query.get("keyword");
+    // let query = new URLSearchParams(window.location.search);
+    // let keyword = query.get("keyword");
+    const {keyword} = useParams()
+    console.log("el kiwor", keyword)
 
     const [moviesResult, setMoviesResult] = useState([]);
+
+    // el hooks useEffect escucha y ante cualquier cambio renderiza nueamente el componente
 
     useEffect(() => {
         const endpoint = `https://api.themoviedb.org/3/search/movie?api_key=379f6ca71eb017bd6e9f97929ced1fde&language=es-ES&query=${keyword}`;
@@ -16,17 +21,18 @@ function Resultados() {
             .then((response) => {
                 const moviesArray = response.data.results;
                 if (moviesArray.length === 0) {
+                    setMoviesResult([])
                     sweetAlert(
                         <h5>No se encontraron peliculas que coincidan con el nombre buscado</h5>
                     );
                 } else {
-                    setMoviesResult(moviesArray);
+                     setMoviesResult(moviesArray);
                 }
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, [moviesResult]);
+    }, [keyword]);
 
     return (
         <>

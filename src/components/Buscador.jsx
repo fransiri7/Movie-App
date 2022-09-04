@@ -12,7 +12,7 @@ function Buscador() {
             sweetAlert(<h5>Debes ingresar 3 caracteres o mas</h5>)
         } else {
             e.currentTarget.keyword.value = "";
-            navigate(`/resultados?keyword=${keyword}`)
+            navigate(`/resultados/${keyword}`)
         }
     }
 
