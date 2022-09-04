@@ -14,7 +14,6 @@ function Listado() {
         });
     }, [setMoviesList]);
 
-    console.log(moviesList);
 
     //token si no estas logueado es NULL
     let token = sessionStorage.getItem("token");
